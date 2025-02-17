@@ -1,7 +1,7 @@
 {
-  "name": "@ambimax/semantic-release-composer",
+  "name": "@iwavesmedia/semantic-release-composer",
   "version": "1.1.0",
-  "description": "",
+  "description": "[**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to update a [composer](https://getcomposer.org/) package for php.",
   "main": "src/index.js",
   "scripts": {
     "test": "yarn run jest:coverage",
@@ -14,10 +14,13 @@
     "jest:coverage": "yarn run jest --coverage",
     "prettier": "nimbus prettier"
   },
-  "author": "Tobias Schifftner <ts@ambimax.de> (https://www.twitter.com/tschifftner)",
+  "author": "IWAVES Medientechnik e.U.",
+  "contributors": [
+    "Marc Peternell <marc.peternell@iwavesmedia.com> (https://github.com/itscark)"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ambimax/semantic-release-composer.git"
+    "url": "git+https://github.com/ambimax/semantic-release-composer.git"
   },
   "license": "MIT",
   "publishConfig": {
@@ -57,5 +60,12 @@
   },
   "dependencies": {
     "@semantic-release/error": "^2.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ambimax/semantic-release-composer/issues"
+  },
+  "homepage": "https://github.com/ambimax/semantic-release-composer#readme",
+  "directories": {
+    "test": "test"
   }
 }
