@@ -44,10 +44,18 @@ async function prepare(pluginConfig, context) {
 
   logger.log('Write version %s to %s', version, composerJsonFile);
 
-  const file = fs.readFileSync(composerJsonFile);
-  const data = JSON.parse(file || '{}');
-  data.version = version;
-  fs.writeFileSync(composerJsonFile, JSON.stringify(data, null, 4));
+  let fileContent = fs.readFileSync(composerJsonFile, 'utf8');
+  const versionRegex = /^(\s*"version"\s*:\s*)"[^"]*"/m;
+
+  if (versionRegex.test(fileContent)) {
+    fileContent = fileContent.replace(versionRegex, `$1"${version}"`);
+  } else {
+    const data = JSON.parse(fileContent || '{}');
+    data.version = version;
+    fileContent = JSON.stringify(data, null, 4);
+  }
+
+  fs.writeFileSync(composerJsonFile, fileContent);
 
   logger.log('Prepared composer.json');
 

@@ -1,6 +1,6 @@
 {
   "name": "@iwavesmedia/semantic-release-composer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "[**semantic-release**](https://github.com/semantic-release/semantic-release) plugin to update a [composer](https://getcomposer.org/) package for php.",
   "main": "src/index.js",
   "scripts": {
